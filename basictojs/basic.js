@@ -9,3 +9,10 @@
 // console.log(typeof accountId)
 // console.log(typeof acccountEmail)
 // console.log(typeof 76886)
+ let num=100;
+ 
+ console.log(num++)
+
+  let num1=100;
+ 
+ console.log(++num1)
