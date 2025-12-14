@@ -10,21 +10,47 @@
     <title></title>
   </head>
   <body>
-    <form action="">
-      <input type="text" name="username" id="username" placeholder="Username" />
-      <br />
-      <input
-        type="password"
-        name="password"
-        id="password"
-        placeholder="Password"
-      />
-      <br />
-      <input type="submit" value="Login" />
+  <div class="container">
+    <h1>bmi calculator</h1>
+    <form action="submit" >
+      <p><label for="">height in cm </label> <input type="text" placeholder="height" id="height"></p>
+      <p><label for="">width in cm </label> <input type="text" placeholder="width" id="weight"></p>
+
+      <p></p>
+      <button> submit</button>
+      <div id="results"></div>
+      <div>
+        <p></p>
+        <p></p>
+        <p></p>
+      </div>
     </form>
+  </div>
   </body>
 
   <script>
-    let f
+    const form = document.querySelector('form');
+// this usecase will give you empty
+// const height = parseInt(document.querySelector('#height').value)
+
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const height = parseInt(document.querySelector('#height').value);
+  const weight = parseInt(document.querySelector('#weight').value);
+  const results = document.querySelector('#results');
+
+  if (height === '' || height < 0 || isNaN(height)) {
+    results.innerHTML = `Please give a valid height ${height}`;
+  } else if (weight === '' || weight < 0 || isNaN(weight)) {
+    results.innerHTML = `Please give a valid weight ${weight}`;
+  } else {
+    const bmi = (weight / ((height * height) / 10000)).toFixed(2);
+    //show the result
+    results.innerHTML = `<span>${bmi}</span>`;
+  }
+});
+
+
   </script>
 </html>
