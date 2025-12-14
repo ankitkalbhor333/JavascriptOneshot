@@ -7,16 +7,31 @@
     <title>Chai aur code </title>
 </head>
 <body style="background-color: #212121; color: #fff;">
-    
+    <ul class="list">
+        <li>java</li>
+    </ul>
 </body>
-<script>
+<script>                
+    
+       function  languages(p){
+        const li=document.createElement("li")
+        li.innerHTML=`${p}`
+        document.querySelector(".list").appendChild(li)
+       }
+    
+       languages("python")
+       languages("javascript")
+       languages("c++")
+       languages("php")
+   
     const div = document.createElement('div')
     console.log(div);
     div.className = "main"
     div.id = Math.round(Math.random() * 10 + 1)
-    div.setAttribute("title", "generated title")
-    div.style.backgroundColor = "green"
+    // div.setAttribute("title", "generated title")
+    div.style.backgroundColor = "red"
     div.style.padding = "12px"
+    div.style.color = "black"
     // div.innerText = "Chai aur code"
     const addText = document.createTextNode("Chai aur code")
     div.appendChild(addText)
