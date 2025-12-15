@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <ul id="images">
+      <li><img width="500px"  src="https://images.pexels.com/photos/60130/pexels-photo-60130.jpeg" id="one" alt=""></li>
+      <li><img width="500px"  src="https://content.pexels.com/images/canva/ai-generated-ad/off-theme/hummingbird_hibiscus_moment-full.jpg" id="two" alt=""></li>
+      <li><img width="500px"  src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg" id="three" alt=""></li>
+      <li><img width="500px"  src="https://images.pexels.com/photos/1557843/pexels-photo-1557843.jpeg" id="four" alt=""></li>
+      <li><img width="500px"  src="https://images.pexels.com/photos/1557843/pexels-photo-1557843.jpeg" id="five" alt=""></li>
+  <li   id="lin"><a href="https://google.com" onclick="SubmitEvent"></a>google</li>
+
+    </ul>
+  </div>
+</body>
+ <script>
+let images=  document.getElementById('images').addEventListener('click',(e)=>{
+    const body=document.body;
+  console.log("clicked the ul");
+   
+  })
+  
+  //   document.getElementById('one').addEventListener('click',(e)=>{
+  //   const body=document.body;
+  // console.log("clicked the first image");
+  //  e.stopPropagation();
+  //  body.style.backgroundColor='red';
+  // })
+
+
+ let store= document.getElementById('lin').addEventListener('click',(e)=>{
+    e.preventDefault();
+    
+  })
+    document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e.target.tagName);
+        if (e.target.tagName === 'IMG') {
+            console.log(e.target.id);
+            let removeIt = e.target.parentElement;
+            removeIt.remove()
+        }
+    
+        
+    })
+    <!--
+
+// const images = document.getElementById('images');
+// const body = document.body;
+// images.addEventListener('click',(e)=>{
+//   console.log(e);
+//     console.log(e.target);
+//       console.log(e.srcElement);
+
+
+//   if(e.target.id==='one'){
+//     body.style.backgroundColor='red';
+//   }
+//   else if(e.target.id==='two'){
+//   body.style.backgroundColor='yellow';  }
+//   else if(e.target.id==='three'){  
+//   body.style.backgroundColor='blue';
+//     }
+//   else if(e.target.id==='four'){
+//   body.style.backgroundColor='orange';
+
+//   }
+//   else if(e.target.id==='five'){
+//     alert('This is fifth image');
+//   }
+// }) -->
+
+</script>
+</html>
