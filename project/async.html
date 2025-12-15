@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href=""
+      rel="stylesheet"
+    />
+    <title></title>
+  </head>
+  <body>
+<h1>coffe with ankit</h1>  
+<button id="stop">stop</button>
+<button id="resume">resume</button>
+</body>
+  <script>
+    const sayankit=()=>
+{
+  console.log("ankit here");
+}
+const changetext=()=>{
+ document.querySelector('h1').textContent="coffe with brane";
+}
+
+let interval=setInterval(changetext,2000);
+
+const stopbutton=document.querySelector('#stop').addEventListener('click',()=>{
+  clearInterval(interval);
+})
+const resumebutton=document.querySelector('#resume').addEventListener('click',()=>{
+  setInterval(changetext,1000);
+
+})
+
+  </script>
+</html>
