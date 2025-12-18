@@ -1,10 +1,31 @@
 <%- include("includes/header.ejs"); %>
 <body>
-  <div class="profile">
-    <h1>Profile of users</h1>
-    <h1>"usernaem" <%= user.name %></h1>
-    <h1>Followers --- <%= user.followers %></h1>
-    <h1>Following <%= user.following %></h1>
+  <div class="container">
+    <h1 class="page-title">🐾 User Profiles</h1>
+
+    <!-- Buttons -->
+    <div class="button-group">
+      <a href="/root1/cats" class="btn">🐱 Cats</a>
+      <a href="/root1/dogs" class="btn">🐶 Dogs</a>
+    </div>
+
+    <!-- Example: Render selected user -->
+    <div class="profile-card">
+      <h2 class="username">@<%= user.name %></h2>
+      <p class="stats">Followers: <%= user.followers %> | Following: <%= user.following %></p>
+
+      <div class="posts">
+        <% user.posts.forEach(function(post) { %>
+          <div class="post">
+            <img src="<%= post.image %>" alt="<%= user.name %> post" class="post-img"/>
+            <div class="post-info">
+              <span>❤️ <%= post.likes %> Likes</span>
+              <span>💬 <%= post.comments %> Comments</span>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+    </div>
   </div>
 </body>
-</html> 
+</html>
